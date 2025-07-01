@@ -1,0 +1,14 @@
+.github/*
+.vscode/*
+*.html
+!assets/public/obfuscator.html
+*.md
+*.json
+!tests/**/*.json
+assets/data/*
+assets/fasttext/*
+dist/*
+node_modules/*
+coverage/
+dist/
+dist_web/

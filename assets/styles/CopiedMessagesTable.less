@@ -1,0 +1,90 @@
+
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("../Sakkal Majalla Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.CopiedMessagesTable {
+    margin: 20px;
+    font-family: "MyCustomFont", 'Courier New', Courier, monospace;
+    font-size: 1em;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .table-container {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .table-header {
+        display: grid;
+        grid-template-columns: 7% 8% 20% 15% 50%; // Adjusted column widths
+        background-color: #333;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+        color: #fff;
+        text-align: center; // Center header text
+    }
+
+    .table-content {
+        overflow-x: auto; // Enable horizontal scrolling
+        overflow-y: hidden; // Prevent vertical scrolling
+        scrollbar-width: thin; // Slim scrollbar for Firefox
+        scrollbar-color: #888 #f4f4f4; // Thumb and track colors for Firefox
+
+        &::-webkit-scrollbar {
+            height: 8px; // Height of the horizontal scrollbar
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f4f4f4; // Track background color
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #888; // Thumb color
+            border-radius: 5px;
+
+            &:hover {
+                background: #555; // Thumb color on hover
+            }
+        }
+    }
+
+    .table-row {
+        display: grid;
+        grid-template-columns: 7% 8% 20% 15% 50%; // Adjusted column widths
+        border-bottom: 1px solid #ddd;
+        align-items: center; // Vertically center row content
+        text-align: center; // Horizontally center row content
+    }
+
+    .table-cell {
+        padding: 10px;
+        white-space: nowrap; // Prevent text from wrapping
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle; // Vertically center text in the cell
+    }
+
+    .table-cell ul {
+        padding: 5px 10px; // Add padding to the <ul> element
+        margin: 0; // Remove default margin
+        list-style-type: disc; // Use disc bullets for the list
+        text-align: left; // Align list items to the left
+    }
+
+    .table-cell ul li {
+        padding: 4px 0; // Add padding between list items
+        text-align: left; // Align list item text to the left
+    }
+
+    .table-row:hover {
+        background-color: #444; // Darker hover effect
+    }
+}

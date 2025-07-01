@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "CommonJS",
+      "strict": true,
+      "esModuleInterop": true,
+      "outDir": "../dist",
+      "rootDir": "./",
+      "moduleResolution": "Node",
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitAny": true,
+      "resolveJsonModule": true,
+      "isolatedModules": false,
+      "allowJs": true,
+      "baseUrl": "../", // Base directory for module resolution
+      "paths": {
+        "@pipeline/*": ["lib/pipeline/*"], // Maps @pipeline/* to lib/pipeline/*
+        "@report/*": ["lib/report/*"],     // Maps @report/* to lib/report/*
+        "@lib/*": ["lib/*"]               // Maps @lib/* to lib/*
+      }
+    },
+  //   "include": ["../lib/**/*.ts", "./**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+  }

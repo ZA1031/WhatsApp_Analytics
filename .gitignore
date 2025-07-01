@@ -1,0 +1,13 @@
+node_modules/
+dist/
+release/
+dist_web/
+coverage/
+report_sample*.data
+stats.json
+report.html
+yarn.lock
+# pack build
+chat-analytics-*.tgz
+*.msi
+*.pkg

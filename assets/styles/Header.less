@@ -1,0 +1,204 @@
+.Header {
+    padding: 15px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    background-color: #22292f;
+    border-bottom: 5px solid #282f35;
+
+    .Header__Tabs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 17px;
+        margin-bottom: 10px;
+        justify-content: center;
+        @media (max-width: 678px) {
+            justify-content: space-between;
+        }
+
+        a {
+            display: block;
+            border-radius: 20px;
+            background-color: #1e2529;
+            border: 2px solid #596570;
+            color: #596570;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            padding: 6px 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: color 0.1s;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            font-size: 0.9em;
+            &:hover {
+                background-color: #21282b;
+                color: #636b77;
+            }
+
+            &.active {
+                background-color: #373f46;
+                border-color: #626ec3;
+                color: white;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 32px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-bottom: 4px;
+    }
+    h2 {
+        color: #636b77;
+        font-size: 17px;
+        font-style: italic;
+    }
+}
+
+.Header__info {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+}
+
+.Header__title {
+    min-width: 0;
+
+    .Label__avatar {
+        min-width: 45px;
+        height: 45px;
+        margin-right: 6px;
+    }
+    .Label__name {
+        font-weight: inherit;
+    }
+}
+
+.Header__link {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 900px) {
+    .Header__info {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .Header__title {
+        margin-right: 50px;
+    }
+}
+
+.Filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    margin-top: 12px;
+
+    .Filters__Filter {
+        flex: 1;
+
+        label {
+            display: block;
+            margin: 5px;
+            margin-top: 6px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        &:first-child {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 1279px) {
+            min-width: 100%;
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.DatePickersContainer {
+    gap: 16px; /* Add spacing between the date pickers */
+    margin-top: 5px; /* Add some spacing above the container */
+    color: white;
+
+    .MuiInputBase-root {
+        color: white; /* Set input text color to white */
+    }
+
+    .MuiOutlinedInput-root {
+        border-color: #596570; /* Set border color */
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+        border-color: #596570; /* Set border color for the outline */
+    }
+
+    .MuiInputLabel-root {
+        color: white; /* Set label color to white */
+    }
+
+    .MuiPickersDay-root {
+        color: white; /* Set calendar day text color to white */
+    }
+
+    .MuiPickersDay-root.Mui-selected {
+        background-color: #596570; /* Set background color for selected day */
+        color: white; /* Set text color for selected day */
+    }
+
+    .MuiPickersDay-root:hover {
+        background-color: #373f46; /* Set hover background color */
+        color: white; /* Set hover text color */
+    }
+
+    .MuiPickersCalendarHeader-label {
+        color: white; /* Set calendar header text color */
+    }
+
+    .MuiPickersArrowSwitcher-button {
+        color: white; /* Set arrow button color */
+    }
+
+    .MuiPickersYear-yearButton {
+        color: white; /* Set year selection text color */
+    }
+
+    .MuiPickersYear-yearButton.Mui-selected {
+        background-color: #596570; /* Set background color for selected year */
+        color: white; /* Set text color for selected year */
+    }
+
+    .MuiPickersMonth-root {
+        color: white; /* Set month selection text color */
+    }
+
+    .MuiPickersMonth-root.Mui-selected {
+        background-color: #596570; /* Set background color for selected month */
+        color: white; /* Set text color for selected month */
+    }
+}
+.TimeSelector {
+    width: 100%;
+    border: 1px solid #596570;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #1e2529;
+    user-select: none;
+
+    canvas {
+        image-rendering: pixelated;
+    }
+}

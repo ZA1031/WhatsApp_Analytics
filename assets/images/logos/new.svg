@@ -1,0 +1,53 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+import cv2
+import os
+
+# Load the PNG image
+png_path = "/mnt/data/new_logo.png"
+image = Image.open(png_path).convert("RGBA")
+image_np = np.array(image)
+
+# Convert RGBA to RGB and handle transparency
+background = Image.new("RGB", image.size, (255, 255, 255))
+background.paste(image, mask=image.split()[3])  # Paste with alpha channel as mask
+image_rgb = np.array(background)
+
+# Convert to grayscale
+gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
+
+# Threshold to binary image
+_, thresh = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY_INV)
+
+# Find contours
+contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+# Create SVG path data from contours
+def contours_to_svg_path(contours):
+    path_data = ""
+    for contour in contours:
+        if len(contour) == 0:
+            continue
+        contour = contour.squeeze()
+        path_data += f"M {contour[0][0]},{contour[0][1]} "
+        for point in contour[1:]:
+            path_data += f"L {point[0]},{point[1]} "
+        path_data += "Z "
+    return path_data
+
+svg_path_data = contours_to_svg_path(contours)
+
+# Create full SVG content
+height, width = gray.shape
+svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+  <path d="{svg_path_data}" fill="black"/>
+</svg>
+"""
+
+# Save SVG file
+svg_output_path = "/mnt/data/new_logo_vectorized.svg"
+with open(svg_output_path, "w") as f:
+    f.write(svg_content)
+
+svg_output_path

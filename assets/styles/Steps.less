@@ -1,0 +1,276 @@
+.Steps {
+    width: 100vw;
+    background-color: #26303b;
+    padding: 15px;
+    margin-bottom: 4vh;
+    margin-top: 2vh;
+
+    fieldset {
+        display: grid;
+        display: contents;
+    }
+    font-size: 1.6em;
+}
+
+.Steps__nav {
+    margin-top: 15px;
+
+    .Button {
+        height: 40px;
+        margin-right: 15px;
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 600px) {
+    .Steps {
+        width: 550px;
+        border-radius: 8px;
+        box-shadow: 0 14px 30px 0 rgb(0 0 0 / 10%);
+    }
+}
+
+.PlatformSelect__buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 10px;
+    Button {
+        font-size: 0.8em;
+    }
+}
+
+.ExportInstructions {
+    li img {
+        display: block;
+        max-width: 100%;
+        margin: 8px auto;
+        border-radius: 5px;
+    }
+
+    .DeviceButton {
+        background: none;
+        color: #25d466;
+        border: 2px solid #25d466;
+        border-radius: 5px;
+        padding: 4px;
+        font-size: 14px;
+        font-family: inherit;
+        margin-top: 5px;
+        margin-right: 7px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .DeviceButton--active {
+        background: #05b947;
+        border-color: #05b947;
+        color: #fff;
+    }
+}
+
+.ExportInstructions__filename {
+    background: #1c232b;
+    border-radius: 7px;
+    font-family: monospace;
+    padding: 5px;
+}
+
+.FilesSelect__zone {
+    user-select: none;
+    margin: 8px 0;
+}
+
+.FilesSelect__dropzone {
+    appearance: none;
+    color: white;
+    width: 100%;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    border: 3px dashed #59b2ff38;
+    background: #2b3949;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    span {
+        background: #1c232b;
+        padding: 2px 5px;
+        border-radius: 7px;
+        font-family: monospace;
+    }
+
+    &:hover {
+        border-color: #b8deff38;
+        background: #36495f;
+    }
+}
+
+.FilesSelect__dropzone--dragover {
+    background: #416287;
+    border-color: #ffffff91;
+}
+
+.FilesSelect__info {
+    background: #25313f;
+    border: 3px solid #355371;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.FilesSelect__clear {
+    height: 25px;
+    padding: 0 10px;
+    margin-left: 8px;
+}
+
+.GenerationProgress {
+    user-select: none;
+    position: relative;
+    transition: height 0.3s ease;
+}
+
+.GenerationProgress__shadow {
+    box-shadow: inset 0 50px 50px -20px #26303b;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.GenerationProgress__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-family: monospace;
+    font-size: 14px;
+    user-select: none;
+}
+
+.GenerationProgress__stat {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    img {
+        height: 16px;
+        margin-right: 4px;
+    }
+
+    &:first-child {
+        padding-left: 0;
+    }
+    &:nth-last-child(2) {
+        flex: 1;
+        justify-content: right;
+        padding-right: 0;
+    }
+}
+
+.ErrorBox {
+    max-height: 160px;
+    overflow: auto;
+    background: #5f3138;
+    border: 3px solid #c83535;
+    border-radius: 3px;
+    padding: 5px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.TaskItem {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.TaskItem__subject {
+    min-width: 0;
+    color: #b495ff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+}
+
+.TaskItem__progress {
+    color: #8d8a8a;
+    margin-left: auto;
+    padding-left: 10px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.TaskItem__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    min-width: 1.5rem;
+    margin-right: 7px;
+    border-radius: 10%;
+    transition: background-color 0.4s ease;
+
+    img {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.TaskItem {
+    &.TaskItem--status-processing {
+        .TaskItem__progress {
+            color: #d8d8d8;
+        }
+        .TaskItem__icon {
+            background: #3560c8;
+        }
+    }
+    &.TaskItem--status-waiting {
+        .TaskItem__title,
+        .TaskItem__subject,
+        .TaskItem__progress {
+            opacity: 0.5;
+        }
+        .TaskItem__icon {
+            background: #c97d00;
+        }
+    }
+    &.TaskItem--status-success .TaskItem__icon {
+        background: #28c900;
+    }
+    &.TaskItem--status-error .TaskItem__icon {
+        background: #c83535;
+    }
+}
+
+.ViewDownloadReport__buttons {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    .Button {
+        height: 40px;
+        margin-right: 15px;
+        font-size: 0.8em;
+        img {
+            @sz: 1.5rem;
+            height: @sz;
+            width: @sz;
+            min-width: @sz;
+            min-height: @sz;
+        }
+    }
+}
+
+.ViewDownloadReport__notice {
+    color: gray;
+}

@@ -1,0 +1,37 @@
+{
+  "extends": "./tsconfig.json",
+
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./dist",      // Compile output
+    "module": "commonjs",
+    "target": "ES2020",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    // "rootDir": "./electron",   // Your src folder
+    // "moduleResolution": "node"  
+  },
+
+  "include": [
+    "app/**/*",
+    "pipeline/**/*",
+    "report/**/*",
+    "assets/Types.d.ts",
+    "electron/**/*.ts"
+  ]
+}
+// {
+//   "compilerOptions": {
+//     "outDir": "./dist",      // Compile output
+//     "module": "commonjs",
+//     "target": "ES2020",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "sourceMap": true,
+//     "rootDir": "./electron",   // Your src folder
+//     "moduleResolution": "node"
+//   },
+//   "include": ["electron/**/*.ts"]
+// }

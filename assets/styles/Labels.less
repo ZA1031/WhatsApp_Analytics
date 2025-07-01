@@ -1,0 +1,166 @@
+.Label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Label__avatar {
+    min-width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-right: 3px;
+}
+
+.Label__name {
+    color: white;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.Label__icon {
+    display: flex;
+    position: relative;
+
+    &--left {
+        margin-right: 4px;
+    }
+    &--right {
+        margin-left: 4px;
+    }
+}
+
+.Label__discriminator {
+    font-weight: normal;
+    color: rgb(255 255 255 / 65%);
+    font-family: monospace;
+    margin: auto;
+    margin-left: 3px;
+}
+
+a.Label {
+    .Label__icon {
+        margin-right: 5px;
+    }
+    .Label__name {
+        color: #7ed0ff;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.MessageLabel,
+.MessageLabel__main {
+    border-radius: 8px;
+    overflow: hidden;
+}
+.MessageLabel {
+    background: #394045;
+}
+.MessageLabel__main {
+    background: #181f22;
+}
+.MessageLabel__reactions {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 75px;
+    overflow: auto;
+    margin-bottom: -5px;
+    margin-left: -3px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+}
+.MessageLabel__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+    padding: 8px;
+    padding-bottom: 0;
+}
+.MessageLabel__time {
+    color: darkgrey;
+    white-space: nowrap;
+    margin-left: auto;
+    padding-left: 8px;
+}
+.MessageLabel__author,
+.MessageLabel__channel {
+    padding: 3px;
+    border-radius: 3px;
+    overflow: hidden;
+    font-size: 12px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+.MessageLabel__author {
+    background: #4d4dff;
+}
+.MessageLabel__channel {
+    background: #9a4dff;
+}
+.MessageLabel__on {
+    margin: 0 5px;
+}
+.MessageLabel__chips {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -5px;
+    margin-left: -3px;
+    margin-bottom: -5px;
+    border-top: 1px solid #ffffff1c;
+    overflow: auto;
+    max-height: 85px;
+    padding: 8px;
+    padding-right: 0;
+}
+.MessageLabel__empty {
+    color: #596570;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+.MessageLabelChip {
+    display: flex;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 22px;
+}
+.MessageLabelChip--attachment {
+    background: red;
+}
+.MessageLabelChip__content {
+    display: flex;
+    background: #59616880;
+    padding: 2px 6px;
+    overflow: hidden;
+    max-width: 165px;
+}
+.MessageLabelChip__count {
+    background: #535d64;
+    padding: 2px 6px;
+}
+.MessageLabel__reaction {
+    display: flex;
+    align-items: center;
+    background: #3b405a;
+    border: 1px solid #5865f2;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 3px;
+}
+.MessageLabel__reactionCount {
+    margin-left: 4px;
+}

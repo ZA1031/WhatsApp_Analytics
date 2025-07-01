@@ -1,0 +1,122 @@
+.Landing {
+    margin-top: 6vh;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    transition: opacity 0.5s;
+    max-width: 750px;
+
+    @media (min-width: 550px) and (min-height: 700px) {
+        //margin-top: 20vh;
+    }
+}
+
+.Landing__title {
+    font-size: 34px;
+    color: white;
+    line-height: 1.2;
+}
+
+.Landing__desc {
+    color: #7f8fa4;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.Landing__sameline {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    text-indent: 2ch;
+    p {
+        margin: 0;
+        padding: 0.2rem 0;
+        font-weight: 400;
+        font-size: 1.8em;
+      }
+}
+.Landing__last {
+    text-align: center;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.4em;
+}
+.Landing__browser {
+    margin-right: 6px;
+}
+
+.Landing__secure {
+    display: inline-flex;
+
+    img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+}
+
+.Landing__platforms-line {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.Landing__platform {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-left: 5px;
+
+    img {
+        width: 55%;
+        height: 55%;
+    }
+}
+
+.Landing__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+    height: 100%;           /* Ensure the container takes full height if needed */
+    margin-top: 20px;       /* Optional: Add spacing from the content above */
+    a {
+        margin-left: 15px;
+    }
+    a:last-child {
+        margin-left: 25px;
+    }
+
+    @media (max-width: 500px) {
+        a:last-child {
+            margin-top: 20px;
+            margin-right: 40px;
+        }
+    }
+
+    @media (max-width: 350px) {
+        display: grid;
+        grid-gap: 15px;
+
+        a {
+            margin: 0 !important;
+        }
+    }
+}
+
+.Landing__cta {
+    box-shadow: 0 14px 30px 0 rgb(118 64 245 / 20%) !important;
+    padding: 10px 20px;
+    font-size: 1.6em;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 20px 35px 0 rgb(118 64 245 / 20%);
+        transform: scale(1.05);
+    }
+}

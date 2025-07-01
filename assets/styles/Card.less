@@ -1,0 +1,164 @@
+@card-min-width: 300px;
+@cards-gap: 10px;
+
+.CardContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: @cards-gap;
+    padding: @cards-gap;
+    padding-bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.8em;
+}
+.Card {
+    position: relative;
+    min-width: @card-min-width;
+    min-height: 180px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #22292f;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+.Card__title {
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-bottom: 5px solid #282f35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    select {
+        display: inline-grid;
+        appearance: none;
+        color: white;
+        font-family: inherit;
+        font-size: inherit;
+        border-bottom: 2px dotted #dddddd96;
+        padding-right: 26px;
+        background: ~"url(@assets/images/icons/chevron-down.svg)" no-repeat;
+        background-position-x: 95%;
+        background-position-y: 60%;
+        transition: border-color 0.2s;
+
+        option {
+            background: #22292f;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom-color: #1ac6ff;
+        }
+    }
+
+    span + *,
+    select + * {
+        margin-left: 6px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 5px;
+        width: 200%;
+        background: url("data:image/svg+xml,<svg width='40' height='40' xmlns='http://www.w3.org/2000/svg'><path d='M0 40 40 0H20L0 20m40 20V20L20 40' fill='rgba(255, 255, 255, 0.2)' fill-rule='evenodd'/></svg>");
+        background-repeat: repeat-x;
+        background-size: 15px;
+        animation: slide 12s linear infinite;
+        transition: 0.25s opacity;
+        z-index: 3;
+
+        @keyframes slide {
+            from {
+                transform: translateX(-50%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &.Card__title--stale::before {
+        opacity: 0.2;
+        animation: none;
+    }
+    &.Card__title--ready::before {
+        opacity: 0;
+        animation: none;
+    }
+    &.Card__title--error::before {
+        background: red;
+        animation: none;
+    }
+}
+.Card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(0 0 0 / 41%);
+    z-index: 2;
+    opacity: 1;
+    transition: 0.25s opacity;
+
+    &.Card__overlay--hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+    &.Card__overlay--error {
+        background: rgb(0 0 0 / 90%);
+    }
+}
+.Card__error {
+    z-index: 4;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.Card__gray {
+    filter: grayscale(100%);
+}
+@media (min-width: (2 * @card-min-width + 3 * @cards-gap)) {
+    .CardContainer {
+        grid-template-columns: repeat(2, 2fr);
+    }
+    .Card--2 {
+        grid-column: span 2;
+    }
+    .Card--3 {
+        grid-column: span 2;
+    }
+}
+@media (min-width: (3 * @card-min-width + 4 * @cards-gap)) {
+    .CardContainer {
+        grid-template-columns: repeat(3, 3fr);
+    }
+    .Card--2 {
+        grid-column: span 2;
+    }
+    .Card--3 {
+        grid-column: span 3;
+    }
+}
+@media (min-width: 1280px) {
+    .CardContainer {
+        padding: 20px;
+        padding-bottom: 0;
+        max-width: 1500px;
+    }
+}

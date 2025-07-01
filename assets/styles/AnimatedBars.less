@@ -1,0 +1,105 @@
+.AnimatedBars {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+.AnimatedBars__header {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: #636b77;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.AnimatedBars__body {
+    position: relative;
+}
+.AnimatedBars__item {
+    position: absolute;
+    left: 0;
+    transition: 0.5s top;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    height: 30px;
+}
+.AnimatedBars__bar {
+    position: absolute;
+    height: 100%;
+    transition: 0.5s width;
+    border-radius: 3px;
+}
+.AnimatedBars__value,
+.AnimatedBars__unit {
+    z-index: 1;
+    padding: 5px;
+}
+.AnimatedBars__value {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.AnimatedBars__exact {
+    color: #ffffffc4;
+    font-weight: bold;
+    font-size: 11px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0 3px;
+    margin-left: 8px;
+}
+.AnimatedBars__footer {
+    font-size: 17px;
+    color: #596570;
+    margin: auto;
+    flex: 1;
+}
+
+.CopiedMessagesTable {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .table-container {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .table {
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+
+    .table-header {
+        display: grid;
+        grid-template-columns: 10% 20% 30% 20% 20%;
+        background-color: #333;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table-row {
+        display: grid;
+        grid-template-columns: 10% 20% 30% 20% 20%;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table-cell {
+        padding: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .table-row:hover {
+        background-color: #333;
+    }
+}

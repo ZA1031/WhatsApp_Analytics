@@ -1,0 +1,89 @@
+
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("../Sakkal Majalla Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    color: white;
+    background-color: #1c232b;
+    font-family: "MyCustomFont", "Fira Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+        sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+a {
+    text-decoration: none;
+    color: #8acfff;
+}
+
+ol {
+    padding: 0 1.4em;
+}
+
+@media (min-width: 450px) {
+    ol {
+        padding: 0 1.8em;
+    }
+}
+
+li::marker {
+    color: #a985ff;
+}
+
+.HomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HomePage__logo {
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+
+    img {
+        height: 70px;
+    }
+}
+
+.HomePage__container {
+    display: none;
+    animation-fill-mode: forwards;
+    margin-top: 0;
+    height: auto; /* Ensure it only takes the height of its content */
+
+}
+.HomePage__container--fade-out {
+    animation: fadeOut 0.21s;
+}
+.HomePage__container--fade-in {
+    display: block;
+    animation: fadeIn 0.21s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
