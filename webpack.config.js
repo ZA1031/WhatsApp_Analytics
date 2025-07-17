@@ -15,14 +15,14 @@ let commitHash = "unknown";
 try {
     commitHash = require("child_process").execSync("git rev-parse --short HEAD").toString().trim();
 } catch {
-    console.warn("Can't run git to get commit hash.");
+    console.log("Couldn't run git to get commit hash.");
 }
 
 let version = "?.?.?";
 try {
     version = JSON.parse(fs.readFileSync(resolve("package.json"))).version;
 } catch {
-    console.warn("Can't read package.json for version.");
+    console.log("Couldn't read package.json for version.");
 }
 
 module.exports = (env) => {
